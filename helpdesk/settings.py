@@ -1,10 +1,9 @@
-
 from pathlib import Path
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-CHANGE_ME'
+SECRET_KEY = 'django-insecure-klucz-testowy'
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 
@@ -15,7 +14,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tickets',
 ]
 
 MIDDLEWARE = [

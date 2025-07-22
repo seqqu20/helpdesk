@@ -1,8 +1,7 @@
-
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% block title %}Strona Główna{% endblock %}
 {% block content %}
 <h1>Witamy w systemie Helpdesk</h1>
-<a href="{% url 'create_ticket' %}"><button>Nowe zgłoszenie</button></a>
-<a href="{% url 'lookup_ticket' %}"><button>Sprawdź zgłoszenie</button></a>
-<a href="/admin/"><button>Panel administratora</button></a>
+<a href="#"><button>Nowe zgłoszenie</button></a>
+<a href="#"><button>Sprawdź zgłoszenie</button></a>
 {% endblock %}
