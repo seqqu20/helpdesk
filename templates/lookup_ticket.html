@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h1>Sprawdź zgłoszenie</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Szukaj</button>
+</form>
+
+{% if ticket %}
+    <h2>Zgłoszenie #{{ ticket.identyfikator }}</h2>
+    <p><strong>Imię:</strong> {{ ticket.imie }}</p>
+    <p><strong>Nazwisko:</strong> {{ ticket.nazwisko }}</p>
+    <p><strong>Tytuł:</strong> {{ ticket.tytul }}</p>
+    <p><strong>Opis:</strong> {{ ticket.opis }}</p>
+    <p><strong>Miejsce:</strong> {{ ticket.miejsce }}</p>
+    <p><strong>Data:</strong> {{ ticket.data_utworzenia|date:"d-m-Y H:i" }}</p>
+{% elif not_found %}
+    <p style="color:red;">Nie znaleziono zgłoszenia.</p>
+{% endif %}
+{% endblock %}
